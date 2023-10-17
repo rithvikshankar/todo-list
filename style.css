@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --main-bg-color: #1c1c1c;
+  --orange: #e46b67;
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white: #ffffff;
+  --font-family: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: var(--font-family);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--orange);
+}
+
+.add-task-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid pink; */
+  padding: 1rem;
+  width: 50vw;
+  margin: 2rem auto;
+}
+
+.input-icon-container {
+  position: relative;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.add-task-box input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #292929;
+  color: var(--white-70);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-indent: 2rem;
+  border-radius: 0.2rem;
+}
+
+.add-task-box input:hover {
+  background-color: #3b3b3b;
+}
+
+.add-task-box i {
+  position: absolute;
+  left: 10px;
+  font-size: 1.3rem;
+  color: var(--orange);
+  opacity: 0.9;
+}
+
+::placeholder {
+  color: var(--orange);
+  opacity: 0.9;
+}
+
+.add-task-box button {
+  width: 20%;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.add-task-box button:hover {
+  cursor: pointer;
+  background-color: #b95855;
+}
+
+.task-list-box {
+  margin: auto;
+  width: 70vw;
+  padding: 1rem;
+  /* border: 1px solid tomato; */
+}
+
+.task-list-box li {
+  list-style: none;
+  padding: 1rem;
+  background-color: #292929;
+  margin-bottom: 1rem;
+  color: var(--white-70);
+}
+
+.task-list-box li:hover {
+  background-color: #3b3b3b;
+}
+
+.task-list-box li:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .add-task-box {
+    width: 90vw;
+    padding: 0.5rem;
+  }
+
+  .task-list-box {
+    width: 90vw;
+  }
+}

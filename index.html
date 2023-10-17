@@ -4,13 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/1331a153c9.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <h1>To-Do List</h1>
-    <input type="text" id="taskInput" placeholder="Add a new task" />
-    <button onclick="addTask()">Add Task</button>
-    <ul id="taskList"></ul>
+    <div class="add-task-box">
+      <div class="input-icon-container">
+        <i class="fa-solid fa-plus"></i>
+        <input
+          type="text"
+          id="task-input"
+          class="task-input"
+          placeholder="Add a new task"
+          oninput="toggleButton()"
+        />
+      </div>
+      <button class="add-button" onclick="addTask()" disabled>Add</button>
+    </div>
+    <div class="task-list-box">
+      <ul id="task-list"></ul>
+    </div>
+
     <script src="todo.js"></script>
   </body>
 </html>
