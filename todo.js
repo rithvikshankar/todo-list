@@ -10,6 +10,10 @@ const addTask = () => {
   taskList.appendChild(newTask);
   taskInput.value = ''
   addButton.disabled = true;
+
+  // Gives task-input-box an icon and text-indent again after submitting task
+  document.getElementById('add-icon').style.display = 'block'
+  document.getElementById('task-input').style.textIndent = '2rem';
 }
 
 // To prevent users from making blank entries
@@ -31,3 +35,9 @@ document.getElementById('task-input').addEventListener('keyup', function(event) 
     addTask();
   }
 });
+
+// Removes add-icon and removes text-indent when the user starts typing
+document.getElementById('task-input').addEventListener('keypress', () => {
+  document.getElementById('add-icon').style.display = 'none'
+  document.getElementById('task-input').style.textIndent = 0;
+})
