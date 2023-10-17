@@ -4,6 +4,7 @@
   --white-70: rgba(255, 255, 255, 0.7);
   --white: #ffffff;
   --font-family: "Inter", sans-serif;
+  --input-text-indent: 1.5rem;
 }
 
 * {
@@ -42,13 +43,14 @@ h1 {
 
 .add-task-box input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.8rem 0.6rem;
   background-color: #292929;
   color: var(--white-70);
   border: none;
   font-size: 1.3rem;
   font-weight: 400;
-  text-indent: 2rem;
+  /* text-indent: 1.5rem; */
+  text-indent: var(--input-text-indent);
   border-radius: 0.2rem;
 }
 
@@ -59,7 +61,7 @@ h1 {
 .add-task-box i {
   position: absolute;
   left: 10px;
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
   color: var(--orange);
   opacity: 0.9;
 }
@@ -77,7 +79,7 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.3rem;
-  padding: 0.5rem;
+  padding: 0.8rem 0.6rem;
   border-radius: 0.2rem;
 }
 
@@ -100,6 +102,8 @@ h1 {
   margin-bottom: 1rem;
   color: var(--white-70);
   animation: fade-in 0.2s ease-in;
+  border-radius: 0.3rem;
+  word-wrap: break-word;
 }
 
 .task-list-box li:hover {
@@ -121,7 +125,7 @@ h1 {
 
 @media screen and (max-width: 768px) {
   .add-task-box {
-    width: 90vw;
+    width: 100vw;
     padding: 0.5rem;
   }
 
