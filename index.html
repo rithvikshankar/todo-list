@@ -20,19 +20,45 @@
     <h1>To-Do List</h1>
     <div class="add-task-box">
       <div class="input-icon-container">
-        <i id="add-icon" class="fa-solid fa-plus"></i>
+        <!-- <i id="add-icon" class="fa-solid fa-plus"></i> -->
         <input
           type="text"
           id="task-input"
           class="task-input"
-          placeholder="Add a new task"
+          placeholder="Enter a task..."
           oninput="toggleButton()"
         />
       </div>
       <button class="add-button" onclick="addTask()" disabled>Add</button>
     </div>
     <div class="task-list-box">
+      <h2 class="tasks-heading">Pending Tasks</h2>
       <ul id="task-list"></ul>
+      <template id="task-li-template">
+        <li class="task-li">
+          <div class="radio-text-container">
+            <button class="radio-btn"></button>
+            <p class="task-text"></p>
+          </div>
+          <button class="delete-task-btn"></button>
+        </li>
+      </template>
+    </div>
+
+    <div class="completed-tasks-box">
+      <ul id="completed-tasks-list">
+        <h2 class="completed-tasks-heading">Completed Tasks</h2>
+        <template id="completed-tasks-li-template">
+          <li class="completed-task-li">
+            <!-- <div class="radio-text-container">
+              <button class="radio-btn"></button>
+              <p class="task-text"></p>
+            </div> -->
+            <!-- <button class="delete-task-btn"></button> -->
+            <p class="completed-task-text"></p>
+          </li>
+        </template>
+      </ul>
     </div>
 
     <script src="todo.js"></script>

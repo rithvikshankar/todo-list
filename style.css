@@ -24,6 +24,10 @@ h1 {
   color: var(--orange);
 }
 
+button {
+  cursor: pointer;
+}
+
 .add-task-box {
   display: flex;
   justify-content: space-evenly;
@@ -50,7 +54,7 @@ h1 {
   font-size: 1.3rem;
   font-weight: 400;
   /* text-indent: 1.5rem; */
-  text-indent: var(--input-text-indent);
+  /* text-indent: var(--input-text-indent);awdad */
   border-radius: 0.2rem;
 }
 
@@ -68,7 +72,7 @@ h1 {
 
 ::placeholder {
   color: var(--orange);
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .add-task-box button {
@@ -88,14 +92,28 @@ h1 {
   background-color: #b95855;
 }
 
-.task-list-box {
+.task-list-box,
+.completed-tasks-box {
+  position: relative;
   margin: auto;
   width: 70vw;
   padding: 1rem;
   /* border: 1px solid tomato; */
 }
 
+.tasks-heading,
+.completed-tasks-heading {
+  color: var(--orange);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
 .task-list-box li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   list-style: none;
   padding: 1rem;
   background-color: #292929;
@@ -104,6 +122,7 @@ h1 {
   animation: fade-in 0.2s ease-in;
   border-radius: 0.3rem;
   word-wrap: break-word;
+  /* text-indent: 2rem; */
 }
 
 .task-list-box li:hover {
@@ -112,6 +131,107 @@ h1 {
 
 .task-list-box li:last-child {
   margin-bottom: 0;
+}
+
+.radio-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-btn {
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+  background-color: inherit;
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+  /* border: 1px solid grey; */
+  /* background-image: url("assets/Radio\ Button.svg");
+  background-size: cover;
+  background-position: center; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* left: 12px; */
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.delete-task-btn {
+  background-image: url("assets/X\ icon.svg");
+  background-size: cover;
+  background-position: center;
+  background-color: inherit;
+  border: none;
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+  transition: transform 0.3s ease;
+}
+
+.radio-btn:hover,
+.delete-task-btn:hover {
+  transform: scale(1.2);
+}
+
+/* .task-list-box li::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-image: url("assets/Radio\ Button.svg");
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.task-list-box li::after {
+  content: "";
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  background-image: url("assets/X\ icon.svg");
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  right: 12px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-50%) scale(1);
+  transform-origin: center;
+}
+
+.task-list-box li:hover::after {
+  transform: translateY(-50%) scale(1.2);
+  cursor: pointer;
+} */
+
+/* .close-button {
+  color: red; 
+  cursor: pointer; 
+  margin-right: 10px; 
+} */
+
+.completed-task-li {
+  position: relative;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  list-style: none;
+  padding: 1rem;
+  background-color: #292929;
+  margin-bottom: 1rem;
+  color: var(--white-70);
+  animation: fade-in 0.2s ease-in;
+  border-radius: 0.3rem;
+  overflow-wrap: break-word;
+  /* text-indent: 2rem; */
+}
+
+.completed-task-text {
+  overflow-wrap: break-word;
 }
 
 @keyframes fade-in {
