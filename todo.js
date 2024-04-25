@@ -56,9 +56,9 @@ const addTask = () => {
   }
 
   // Gives task-input-box an icon and text-indent again after submitting task
-  document.getElementById("add-icon").style.display = "block";
-  document.getElementById("task-input").style.textIndent =
-    "var(--input-text-indent)";
+  // document.getElementById("add-icon").style.display = "block";
+  // document.getElementById("task-input").style.textIndent =
+  //   "var(--input-text-indent)";
 };
 
 // Remove task from task list and add it to completed list
@@ -157,7 +157,7 @@ document
 // Removes add-icon and removes text-indent when the user starts typing
 document.getElementById("task-input").addEventListener("click", () => {
   document.getElementById("add-icon").style.display = "none";
-  document.getElementById("task-input").style.textIndent = 0;
+  // document.getElementById("task-input").style.textIndent = 0;
 });
 
 const handleTaskCompletion = (event) => {
@@ -169,9 +169,26 @@ const handleTaskCompletion = (event) => {
   }
 };
 
+const handleDeleteTask = (taskElement) => {
+  const taskText = taskElement.getAttribute("data-task");
+  taskElement.remove();
+
+  let tasks = getTasks();
+  tasks = tasks.filter((task) => task !== taskText);
+  saveTasks(tasks);
+};
+
 document
   .getElementById("task-list")
   .addEventListener("click", handleTaskCompletion);
+
+document.getElementById("task-list").addEventListener("click", (event) => {
+  const target = event.target;
+  const taskElement = target.closest("[data-task]");
+  if (taskElement) {
+    handleDeleteTask(taskElement);
+  }
+});
 
 // Handle task completion using event delegation
 // document.getElementById("task-list").addEventListener("click", (event) => {
